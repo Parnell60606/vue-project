@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'firstPage',
-      component: () => import('../views/FirstPagetest.vue')
+      component: () => import('../views/firstPageTest.vue')
     },
     /* 前台--------------------------------------------------------------------------- */
     {
