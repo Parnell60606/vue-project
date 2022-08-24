@@ -1,1 +1,0 @@
-import{_ as n,o,c as t,F as s,d as e}from"./index.757a3cda.js";const c={},_=e("h1",null,"\u6211\u662F",-1),a=e("h2",null,"\u7BA1\u7406\u8005\u9801\u9762\u7684",-1),r=e("h3",null,"\uFF5E\u9996\u9801\uFF5E",-1);function l(d,h){return o(),t(s,null,[_,a,r],64)}const m=n(c,[["render",l]]);export{m as default};
