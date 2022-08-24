@@ -86,8 +86,11 @@ export const useUserStore = defineStore({
             }
             this.token = ''
             this.account = ''
+            this.userName = ''
+            this.email = ''
+            this.phone = ''
             this.role = 0
-            this.cart = 0
+
         }
     }
 })

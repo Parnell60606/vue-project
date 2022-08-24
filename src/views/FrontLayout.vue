@@ -48,11 +48,10 @@
           </n-space>
 
 
-          <n-space class="header-end-button">
+          <n-space class="header-end-button" :size="24">
 
 
-            <!-- <div class="admin" v-if="isAdmin"> -->
-            <div class="admin">
+            <div class="admin" v-if="isAdmin">
               <n-button round>
                 <router-link to="/admin">
                   <div>管理者後台</div>
@@ -61,8 +60,7 @@
             </div>
 
 
-            <!-- <div class="menber" v-if="isLogin && !isAdmin"> -->
-            <div class="menber">
+            <div class="menber" v-if="isLogin && !isAdmin">
               <n-button round>
                 <router-link to="/menber">
                   <div>我的訂單</div>
