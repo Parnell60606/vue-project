@@ -48,13 +48,49 @@
           </n-space>
 
 
+          <n-space class="header-end-button">
 
-          <div class="login-logout">
 
-            <n-message-provider>
-              <RegisterModal />
-            </n-message-provider>
-          </div>
+            <!-- <div class="admin" v-if="isAdmin"> -->
+            <div class="admin">
+              <n-button round>
+                <router-link to="/admin">
+                  <div>管理者後台</div>
+                </router-link>
+              </n-button>
+            </div>
+
+
+            <!-- <div class="menber" v-if="isLogin && !isAdmin"> -->
+            <div class="menber">
+              <n-button round>
+                <router-link to="/menber">
+                  <div>我的訂單</div>
+                </router-link>
+              </n-button>
+            </div>
+
+
+
+
+
+            <div class="login-logout">
+
+              <n-message-provider>
+
+                <RegisterModal v-if="!isLogin" />
+
+                <!-- <LogoutModal v-if="isLogin" /> -->
+                <!-- logoutModal的Pinia怪怪的會404 代替↓ -->
+                <n-button @click="logout" round v-if="isLogin">
+                  <div>登出</div>
+                </n-button>
+
+              </n-message-provider>
+            </div>
+
+
+          </n-space>
 
         </n-space>
 
@@ -116,10 +152,6 @@
           </div>
         </router-link>
 
-        <!-- 測試用 登出 -->
-        <n-message-provider>
-          <LogoutModal />
-        </n-message-provider>
 
 
       </n-layout-footer>
@@ -137,11 +169,16 @@ import { RouterLink, RouterView } from 'vue-router'
 import themeOverrides from '../assets/theme'
 
 
+
+import { storeToRefs } from 'pinia';
+import { useUserStore } from '../stores/user';
+
+const user = useUserStore()
+const { logout } = user
+const { isLogin, isAdmin, cart } = storeToRefs(user)
+
 </script>
 
-<script>
-
-</script>
 
 
 <style scoped>
@@ -162,8 +199,9 @@ import themeOverrides from '../assets/theme'
     max-width: 500px !important;
 } */
 
-.login-logout {
-  line-height: 44px;
+.header-end-button {
+  /* display: flex; */
+  line-height: 48px;
   /* align-items: center; */
   /* justify-content: center; */
 }

@@ -116,6 +116,8 @@ import { isEmail } from 'validator'
 import Swal from 'sweetalert2'
 import { api } from '../../plugins/axios'
 import { useRouter } from 'vue-router'
+
+// 登入或註冊後跳轉至首頁
 import { useUserStore } from '../../stores/user'
 
 
