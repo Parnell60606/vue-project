@@ -115,11 +115,11 @@ const loading = ref(false);
 const form = ref({
     //   login register 的 formValue合併
     // 註冊登入按鈕事件分開寫
+    userName: '',
     account: '',
     password: '',
     email: '',
-    phone: '',
-    userName: ''
+    phone: ''
 })
 
 // 老師的檔案是reactive
@@ -259,13 +259,10 @@ const handleValidateClick = (e) => {
 
 const register = async () => {
     if (!form.value) return
-    loading.value = true
-
-    console.log(form.value)
-
     try {
         //  api.post ('http://localhost:4000/users')
-        await api.post('/users', form)
+        // 因為前面的 form是用ref ，所以 要用form.value傳資料
+        await api.post('/users', form.value)
         await Swal.fire({
             icon: 'success',
             title: '成功',
