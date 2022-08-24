@@ -1,0 +1,1 @@
+import{_ as e,o as c,c as n}from"./index.2f0593f2.js";const o={};function r(t,s){return c(),n("h1",null,"\u6700\u7D14\u6DE8\u7684\u6CF0\u5C71\u5C71\u9802\u7926\u6CC9\u6C34")}const a=e(o,[["render",r]]);export{a as default};

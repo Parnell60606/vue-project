@@ -1,1 +1,0 @@
-import{_ as n,o as s,c as t,F as c,d as e}from"./index.ee53407b.js";const o={},r=e("h1",null,"\u904E\u53BB\u310C",-1),_=e("h2",null,"\u5C31",-1),a=e("h3",null,"\u5225\u505A\u310C",-1);function l(d,h){return s(),t(c,null,[r,_,a],64)}const f=n(o,[["render",l]]);export{f as default};
