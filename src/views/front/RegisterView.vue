@@ -7,10 +7,37 @@
 
             <n-tabs default-value="signin" size="large" justify-content="space-evenly" animated>
 
+                <!-- 登入 ------------------------------------------------------------>
+                <n-tab-pane name="signin" tab="登入會員">
+                    <!-- <n-form :model="formLogin" :rules="rulesLogin"> -->
+                    <n-form :model="form" ref="formRef" :rules="rules" @submit.prevent='login'>
+                        <!-- @submit.prevent  提交後不刷新頁面 -->
+
+
+                        <n-form-item-row label="帳號" path="account">
+                            <n-input v-model:value="form.account" placeholder="請輸入帳號" />
+                        </n-form-item-row>
+
+                        <h1>測試帳號 {{ form.account }}</h1>
+                        <h1>測試密碼 {{ form.password }}</h1>
+
+                        <!-- <n-form-item-row label="密碼" :rules="rules.password" path="password"> -->
+                        <n-form-item-row label="密碼" path="password">
+                            <n-input v-model:value="form.password" placeholder="請輸入密碼" />
+                        </n-form-item-row>
+
+                        <n-button attr-type="submit" :loading="loading" type="primary" block secondary strong round>
+                            登入
+                        </n-button>
+
+                    </n-form>
+                </n-tab-pane>
+
+
 
 
                 <!-- @submit.prevent='register'  把換頁擋下來的function (submit按鈕會自動換頁) -->
-                <n-tab-pane name="signup" tab="註冊" @submit.prevent='register'>
+                <n-tab-pane name="signup" tab="註冊">
 
                     <!-- <n-form :model="formRegister" ref="formRef" :rules="rules">
                         <n-form-item-row label="姓名" path="name">
@@ -31,17 +58,15 @@
                     </n-form> -->
 
 
-
-                    <h1>測試name {{ form.userName }}</h1>
+                    <!-- <h1>測試name {{ form.userName }}</h1>
                     <h1>測試帳號 {{ form.account }}</h1>
                     <h1>測試密碼 {{ form.password }}</h1>
                     <h1>測試email {{ form.email }}</h1>
-                    <h1>測試442 {{ form.phone }}</h1>
+                    <h1>測試442 {{ form.phone }}</h1> -->
 
 
-
-                    <!-- 用formLogin測試 -->
-                    <n-form :model="form" ref="formRef" :rules="rules">
+                    <!-- register ------------------------------------------------------------>
+                    <n-form :model="form" ref="formRef" :rules="rules" @submit.prevent='register'>
 
                         <n-form-item-row label="姓名" path="userName">
                             <n-input v-model:value="form.userName" placeholder="請輸入使用者名稱" />
@@ -91,6 +116,12 @@ import { isEmail } from 'validator'
 import Swal from 'sweetalert2'
 import { api } from '../../plugins/axios'
 import { useRouter } from 'vue-router'
+import { useUserStore } from '../../stores/user'
+
+
+// 登入用pinia 的 difineStore   (放在 store/user
+const user = useUserStore()
+
 
 
 import axios from 'axios';
@@ -166,7 +197,6 @@ const rules = reactive({
     },
     password: {
         required: true,
-
         validator(rule, value) {
             if (!value) {
                 return new Error("請輸入密碼")
@@ -268,7 +298,8 @@ const register = async () => {
             title: '成功',
             text: '註冊成功'
         })
-        router.push('/')
+        // 登入成功後跳到首頁
+        router.push('/home')
     } catch (error) {
         Swal.fire({
             icon: 'error',
@@ -281,6 +312,11 @@ const register = async () => {
 }
 
 
+const formValue = form.value
+
+const login = () => {
+    user.login(formValue)
+}
 
 </script>
 
