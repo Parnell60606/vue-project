@@ -91,6 +91,28 @@ export const useUserStore = defineStore({
             this.phone = ''
             this.role = 0
 
+        },
+        async getUser() {
+            if (this.token.length === 0) return
+            try {
+                const { data } = await apiAuth.get('/users/getuser')
+
+                this.account = data.result.account
+                this.userName = data.result.userName
+                this.email = data.result.email
+                this.avatar = data.result.avatar
+                this.pastOrders = data.result.pastOrders
+
+
+            } catch (error) {
+                // this.logout()
+                console.log(error.type)
+            }
         }
+    },
+    // localstorage設定  儲存token
+    persist: {
+        key: 'vite-shop',
+        paths: ['token']
     }
 })

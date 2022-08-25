@@ -191,6 +191,16 @@ const router = createRouter({
             login: true,
             admin: false
           }
+        },
+        {
+          path: '/myinfo',
+          name: 'myinfo',
+          component: () => import('../views/menberBack/MyInformation.vue'),
+          meta: {
+            title: '取消的訂單',
+            login: true,
+            admin: false
+          }
         }
       ]
     }
@@ -199,22 +209,22 @@ const router = createRouter({
 })
 
 // 路由守衛
-router.afterEach((to, from) => {
-  document.title = to.meta.title
-})
+// router.afterEach((to, from) => {
+//   document.title = to.meta.title
+// })
 
-router.beforeEach((to, from, next) => {
-  const user = useUserStore()
-  if (user.isLogin && (to.path === '/register' || to.path === '/login')) {
-    next('/')
-  } else if (to.meta.login && !user.isLogin) {
-    next('/login')
-  } else if (to.meta.admin && !user.isAdmin) {
-    next('/')
-  } else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   const user = useUserStore()
+//   if (user.isLogin && (to.path === '/register' || to.path === '/login')) {
+//     next('/')
+//   } else if (to.meta.login && !user.isLogin) {
+//     next('/login')
+//   } else if (to.meta.admin && !user.isAdmin) {
+//     next('/')
+//   } else {
+//     next()
+//   }
+// })
 
 
 export default router

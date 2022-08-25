@@ -149,8 +149,8 @@ const form = ref({
     //   login register 的 formValue合併
     // 註冊登入按鈕事件分開寫
     userName: '',
-    account: '',
-    password: '',
+    account: 'aaaaaaaa',
+    password: 'aaaaaaaa',
     email: '',
     phone: ''
 })

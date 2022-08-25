@@ -95,7 +95,9 @@
       </n-layout-header>
 
       <!-- 前台網頁內容(渲染) ----------------------------------------------------------------------------->
-      <n-layout-content content-style="padding: 24px;">
+      <!-- <n-layout-content content-style="padding: 24px;"> -->
+      <n-layout-content>
+
 
         <div class="container">
 
@@ -164,6 +166,8 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+
+// naive 的 主題變量
 import themeOverrides from '../assets/theme'
 
 
@@ -180,7 +184,13 @@ const { isLogin, isAdmin, cart } = storeToRefs(user)
 
 
 <style scoped>
-.n-layout-header,
+.n-layout-header {
+  background: #363B4B;
+  padding: 16px;
+  color: white;
+
+}
+
 .n-layout-footer {
   /* background: rgba(128, 128, 128, 0.2); */
   background: #363B4B;
@@ -212,10 +222,12 @@ a:visited {
   color: inherit;
 }
 
-.n-layout-header a {
+/* .n-layout-header a {
   color: white;
-  /* color: white !important; */
-}
+} */
+
+
+
 
 .test-button {
   background: rgba(245, 222, 179, 0.2);
