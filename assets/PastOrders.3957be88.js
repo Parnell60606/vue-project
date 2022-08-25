@@ -1,1 +1,0 @@
-import{_ as s,o as t,c,F as n,d as e}from"./index.feb06b70.js";const o={},r=e("h1",null,"\u904E\u53BB\u7684\u8A02\u55AE",-1),a=e("h2",null,"\u7684\u6E05\u55AE",-1);function _(l,d){return t(),c(n,null,[r,a],64)}const u=s(o,[["render",_]]);export{u as default};
