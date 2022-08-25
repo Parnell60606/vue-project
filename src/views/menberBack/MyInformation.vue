@@ -1,35 +1,36 @@
 <template>
-    <h1>我的</h1>
-    <h2>個人資料</h2>
+    <h1>我的帳戶</h1>
 
     <!-- 抓自己的個人資料 -->
 
 
-    <n-card content-style="padding: 50px;" size="large" :segmented="{
-        content: true,
-        footer: 'soft'
-    }">
+    <n-card title="個人資料" header-style="padding: 50px;" content-style="padding: 50px;" footer-style="padding: 50px;"
+        size="large" :segmented="{
+            content: true,
+            footer: 'soft'
+        }" hoverable>
 
 
+
+
+
+        <template #header-extra>
+            <div>
+                <n-text v-if="!userInfo.avatar" depth="3">用戶還沒上傳大頭貼</n-text>
+                <n-button v-if="!userInfo.avatar" secondary round>上傳大頭貼</n-button>
+            </div>
+        </template>
 
         <n-h4>用戶名：{{ userInfo.userName }}</n-h4>
-        <n-h4>帳號：{{ userInfo.account }}</n-h4>
         <n-h4>帳號：{{ userInfo.account }}</n-h4>
         <n-h4>email：{{ userInfo.email }}</n-h4>
         <n-h4>帳號：{{ userInfo.account }}</n-h4>
 
-        <n-h4>用戶沒有上船大頭貼</n-h4>
 
-
-        <template #header-extra>
-            #header-extra
-        </template>
-        卡片内容
         <template #footer>
-            #footer
-        </template>
-        <template #action>
-            #action
+            <n-text depth="3" v-if="userInfo.pastOrders.length === 0">您尚未建立任何訂單</n-text>
+            <div v-if="userInfo.pastOrders.length !== 0">{{ userInfo.pastOrders }}</div>
+
         </template>
 
 
