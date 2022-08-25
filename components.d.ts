@@ -58,6 +58,7 @@ declare module '@vue/runtime-core' {
     NTab: typeof import('naive-ui')['NTab']
     NTabPane: typeof import('naive-ui')['NTabPane']
     NTabs: typeof import('naive-ui')['NTabs']
+    NText: typeof import('naive-ui')['NText']
     NTimePicker: typeof import('naive-ui')['NTimePicker']
     NUl: typeof import('naive-ui')['NUl']
     PageHeader: typeof import('./src/components/PageHeader.vue')['default']
