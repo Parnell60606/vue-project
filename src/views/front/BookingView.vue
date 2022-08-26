@@ -1,9 +1,12 @@
 <template>
 
 
-    <h1>訂位</h1>
+    <!-- <n-divider title-placement="left">
+        <h1>線上訂位</h1>
+    </n-divider> -->
 
-    <n-divider />
+    <h1>線上訂位</h1>
+
 
     <n-space justify="center" :size="50">
 

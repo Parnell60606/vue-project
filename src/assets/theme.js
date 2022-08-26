@@ -38,6 +38,18 @@ const themeOverrides = {
         "tabTextColorActiveBar": "#F1C661FF",
         "tabTextColorHoverBar": "#9CC0D3FF"   // hover變藍
     },
+    "Divider": {
+
+        // "textColor": "rgba(100, 100, 100, 1)", // 分隔線文字顏色
+        "textColor": "#363B4Baa", // 分隔線文字顏色 - 深藍
+        // "textColor": "#A05C18FF", // 分隔線文字顏色 - 深褐色
+        // "textColor": "#F1C661", // 分隔線文字顏色 - 金色
+        // "color": "#363B4Baa" // TOPBAR的深藍
+        "color": "rgba(238, 230, 214, 1)", // 分隔線文字顏色 - 金色
+
+
+
+    },
     "Dialog": {
         "padding": "50px 40px 40px 50px",
         "borderRadius": "15px"

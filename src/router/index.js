@@ -5,8 +5,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import FrontLayout from '../views/FrontLayout.vue'
 import AdminLayout from '../views/AdminLayout.vue'
 import MenberLayout from '../views/MenberLayout.vue'
-import { useUserStore } from '@/stores/user'
-
+import { useUserStore } from '../stores/user'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL), // HTML5 History API (要寫後端路由不然重新整理會404)
@@ -61,11 +60,11 @@ const router = createRouter({
           }
         },
         {
-          path: '/location',
-          name: 'location',
+          path: '/contactus',
+          name: 'contactus',
           component: () => import('../views/front/LocationView.vue'),
           meta: {
-            title: '位置',
+            title: '聯絡我們',
             login: false,
             admin: false
           }
@@ -76,16 +75,6 @@ const router = createRouter({
           component: () => import('../views/front/BookingView.vue'),
           meta: {
             title: '線上訂位',
-            login: false,
-            admin: false
-          }
-        },
-        {
-          path: '/contactus',
-          name: 'contactus',
-          component: () => import('../views/front/ContactUsView.vue'),
-          meta: {
-            title: '聯絡我們',
             login: false,
             admin: false
           }

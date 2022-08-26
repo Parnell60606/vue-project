@@ -24,7 +24,7 @@
         <n-h4>用戶名：{{ userInfo.userName }}</n-h4>
         <n-h4>帳號：{{ userInfo.account }}</n-h4>
         <n-h4>email：{{ userInfo.email }}</n-h4>
-        <n-h4>帳號：{{ userInfo.account }}</n-h4>
+        <n-h4>電話：{{ userInfo.phone }}</n-h4>
 
 
         <template #footer>
@@ -95,17 +95,11 @@ const getUser = async () => {
         userInfo.account = data.result.account
         userInfo.userName = data.result.userName
         userInfo.email = data.result.email
+        userInfo.phone = data.result.phone
         userInfo.avatar = data.result.avatar
         userInfo.pastOrders = data.result.pastOrders
 
         console.log(userInfo)
-
-
-
-
-        // console.log(data.result._id) // undefine
-
-
 
 
     } catch (error) {

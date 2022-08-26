@@ -250,6 +250,70 @@
 # n-form
 使用 `async-validator` 套件
 
+<br>
+
+## n-form 的子元素
+## `<n-form>`
+  - ### `<n-form-item>`
+    - #### `<n-grid>`
+      - ##### `<n-form-item-gi>`
+
+## 或是
+## `<n-form>`
+- ### `<n-grid>`  
+  - #### `<n-form-item-gi>`
+
+
+
+<br>  
+
+## props  
+- `label-placement` : label(表單輸入格的標題)位置  
+  - `'left' | 'top'`
+
+
+- `label-align` : 標籤的文本對齊方式  
+  - `'left' | 'top'`
+
+- `label-width` :  標籤寬度 (auto自動調整)
+  - `number | string | 'auto'`
+
+<br><br><br>
+
+
+# n-input 文本輸入
+
+## 子元素
+- `<n-input-group>` :把from相關的子元素放在同一行  
+  ```html
+  <n-input-group>
+    <n-button type="primary">
+      搜索
+    </n-button>
+    <n-input :style="{ width: '50%' }" />
+    <n-button type="primary" ghost>
+      搜索
+    </n-button>
+  </n-input-group>
+  ``` 
+
+## props
+- type 文本輸入類型 (text一般、password看不到密碼輸入、textarea 大範圍輸入)
+  - 	'text' | 'password' | 'textarea'
+
+<br><br><br>
+
+# n-date-picker  
+使用unix時間格式儲存 (ㄅ)  
+- `type` : 日期選擇器的類型  
+  - `'date' | 'datetime' | 'daterange' | 'datetimerange' | 'month' | 'monthrange' | 'year' | 'quarter'`
+
+
+# n-time-picker  
+
+- `format` 格式化方式
+<a href="https://date-fns.org/v2.23.0/docs/format">詳情</a>
+
 
 <br><br><br>
 

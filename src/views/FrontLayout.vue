@@ -25,17 +25,12 @@
               </n-tab>
               <n-tab name="菜單">
                 <router-link to="/menu">
-                  菜單
-                </router-link>
-              </n-tab>
-              <n-tab name="位置">
-                <router-link to="/location">
-                  位置
+                  精緻菜單
                 </router-link>
               </n-tab>
               <n-tab name="訂位">
                 <router-link to="/booking">
-                  訂位
+                  線上訂位
                 </router-link>
               </n-tab>
               <n-tab name="聯絡我們">
@@ -118,10 +113,10 @@
 
           <div class="footer-menu">
             <p>首頁</p>
+            <p>菜單</p>
             <p>關於我們</p>
-            <p>位置</p>
-            <p>訂位</p>
             <p>聯絡我們</p>
+            <p>訂位</p>
 
           </div>
 

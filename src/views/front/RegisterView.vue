@@ -10,7 +10,7 @@
                 <!-- 登入 ------------------------------------------------------------>
                 <n-tab-pane name="signin" tab="登入會員">
                     <!-- <n-form :model="formLogin" :rules="rulesLogin"> -->
-                    <n-form :model="form" ref="formRef" :rules="rules" @submit.prevent='login'>
+                    <n-form :model="form" :rules="rules" @submit.prevent='login'>
                         <!-- @submit.prevent  提交後不刷新頁面 -->
 
 
@@ -66,7 +66,7 @@
 
 
                     <!-- register ------------------------------------------------------------>
-                    <n-form :model="form" ref="formRef" :rules="rules" @submit.prevent='register'>
+                    <n-form :model="form" :rules="rules" @submit.prevent='register'>
 
                         <n-form-item-row label="姓名" path="userName">
                             <n-input v-model:value="form.userName" placeholder="請輸入使用者名稱" />
@@ -130,7 +130,7 @@ import axios from 'axios';
 
 const router = useRouter()
 
-const formRef = ref(null)
+// const formRef = ref(null)
 const message = useMessage();
 window.$message = useMessage();
 
