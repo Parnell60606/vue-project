@@ -31,13 +31,13 @@ export const useUserStore = defineStore({
     // 可以先將資料處理好用傳出
     getters: {
         // 判斷是不是會員，有沒有登入
-        isLogin() {
+        isLogin () {
             return this.token.length !== 0
         },
-        isAdmin() {
+        isAdmin () {
             return this.role === 1
         },
-        avatar() {
+        avatar () {
             // 訪客圖像   網址 + this.account    << 此網址會自動產生img
             return 'https://source.boringavatars.com/beam/120/' + this.account
         }
@@ -45,7 +45,7 @@ export const useUserStore = defineStore({
     // 修改狀態用的 function
     // 真正的login function放這邊
     actions: {
-        async login(formValue) {
+        async login (formValue) {
             try {
                 const { data } = await api.post('/users/login', formValue)
                 this.token = data.result.token
@@ -62,13 +62,13 @@ export const useUserStore = defineStore({
                 router.push('/home')
             } catch (error) {
                 Swal.fire({
-                    icon: 'error',
-                    title: '失敗',
-                    text: (error.isAxiosError && error.response.data) ? error.response.data.message : '發生錯誤'
+                    icon: 'warning',
+                    title: '請先登入',
+                    text: (error.isAxiosError && error.response.data) ? error.response.data.message : '登入後即可享用便利的線上訂位'
                 })
             }
         },
-        async logout() {
+        async logout () {
             try {
                 // await api.delete('/users/logout', {
                 //   headers: {
@@ -92,7 +92,7 @@ export const useUserStore = defineStore({
             this.role = 0
 
         },
-        async getUser() {
+        async getUser () {
             if (this.token.length === 0) return
             try {
                 const { data } = await apiAuth.get('/users/getuser')
@@ -108,7 +108,35 @@ export const useUserStore = defineStore({
                 // this.logout()
                 console.log(error.type)
             }
-        }
+        },
+
+
+
+        // async confirm (bookingDefault) {
+        async confirm (booking) {
+            try {
+                // 要抓token的就用apiAuth
+                const { data } = await apiAuth.post('/orders', booking)
+                this.bookingDate = data.result.bookingDate
+                this.bookingTime = data.result.bookingTime
+                this.numberOfPeople = data.result.numberOfPeople
+                this.usersNote = data.result.usersNote
+
+                Swal.fire({
+                    icon: 'success',
+                    title: '成功',
+                    text: '訂位成功'
+                })
+                router.push('/menber')
+
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: '失敗',
+                    text: (error.isAxiosError && error.response.data) ? error.response.data.message : '發生錯誤(store/user)'
+                })
+            }
+        },
     },
     // localstorage設定  儲存token
     persist: {

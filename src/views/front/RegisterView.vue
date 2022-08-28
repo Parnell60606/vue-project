@@ -9,7 +9,6 @@
 
                 <!-- 登入 ------------------------------------------------------------>
                 <n-tab-pane name="signin" tab="登入會員">
-                    <!-- <n-form :model="formLogin" :rules="rulesLogin"> -->
                     <n-form :model="form" :rules="rules" @submit.prevent='login'>
                         <!-- @submit.prevent  提交後不刷新頁面 -->
 
@@ -115,13 +114,13 @@
 import { isEmail } from 'validator'
 import Swal from 'sweetalert2'
 import { api } from '../../plugins/axios'
+// 登入或註冊後跳轉至首頁
 import { useRouter } from 'vue-router'
 
-// 登入或註冊後跳轉至首頁
 import { useUserStore } from '../../stores/user'
 
 
-// 登入用pinia 的 difineStore   (放在 store/user
+// 登入用pinia 的 defineStore   (放在 store/user
 const user = useUserStore()
 
 
@@ -182,7 +181,7 @@ const rules = reactive({
         // message 執行優先度比 validator 高
 
 
-        validator(rule, value,) {
+        validator (rule, value,) {
             if (!value) {
                 return new Error("請輸入帳號")
             } else if (form.value.account.length > 15) {
@@ -199,7 +198,7 @@ const rules = reactive({
     },
     password: {
         required: true,
-        validator(rule, value) {
+        validator (rule, value) {
             if (!value) {
                 return new Error("請輸入密碼")
             } else if (form.value.password.length > 15 || form.value.password.length < 5 || !/^[A-Za-z0-9]+$/.test(value))
@@ -217,7 +216,7 @@ const rules = reactive({
         //     return value.trim()
         // },
 
-        validator(rule, value) {
+        validator (rule, value) {
             if (!value) {
                 console.log(form.value.email)
                 return new Error("請輸入電子信箱")
@@ -235,7 +234,7 @@ const rules = reactive({
         pattern: /^[0-9]+$/,
         message: "請輸入電話號碼",
 
-        validator(rule, value) {
+        validator (rule, value) {
             if (!value) {
                 console.log(form.value.phone)
                 return new Error("請輸入電話號碼")

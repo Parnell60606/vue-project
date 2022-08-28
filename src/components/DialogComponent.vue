@@ -8,14 +8,15 @@ import { defineComponent } from "vue";
 import { useMessage } from "naive-ui";
 
 export default defineComponent({
-    setup() {
+    setup () {
         window.$message = useMessage()
         const message = useMessage();
+        const dialog = useDialog()
         return {
-            handleNegativeClick() {
+            handleNegativeClick () {
                 message.warning("no");
             },
-            handlePositiveClick() {
+            handlePositiveClick () {
                 message.success("yes!!!!");
             }
         };

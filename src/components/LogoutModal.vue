@@ -3,6 +3,8 @@
     <n-button @click="showModal = true" round>
         <div>登出</div>
     </n-button>
+
+
     <!-- <n-modal v-model:show="showModal" :style="bodyStyle" preset="dialog" title="登出" content="確定要登出嗎？" positive-text="是"
         negative-text="否" @positive-click="submitCallback" @negative-click="cancelCallback" :header-style="headerStyle"> -->
     <n-modal v-model:show="showModal" :style="bodyStyle" preset="card" negative-text="否">
@@ -20,7 +22,9 @@
             <n-space justify="end" style="padding:0 5px ;" size="large">
 
                 <!-- <n-button @click="submitCallback, showLoading = true" type="primary"> -->
-                <n-button @click="submitCallback, logout" type="primary">
+                <!-- <n-button @click="submitCallback, logout" type="primary"> -->
+                <n-button @click="logout" type="primary">
+
                     是
                 </n-button>
 
@@ -35,21 +39,43 @@
     </n-modal>
 </template>
 
-<script>
+
+<!-- <script setup>
 import { defineComponent, ref } from "vue";
 import { useMessage } from "naive-ui";
+import RegisterView from "../views/front/RegisterView.vue";
+
+import { useUserStore } from '../stores/user'
+const user = useUserStore()
+
+
+        const message = useMessage();
+        const showModalRef = ref(false);
+        const showLoadingRef = ref(false);
+
+        window.$message = useMessage();
+
+
+const { logout } = user
+
+
+</script> -->
+
+<script>
+import { defineComponent, ref } from "vue";
 import RegisterView from "../views/front/RegisterView.vue";
 
 
 
 
-// import { useUserStore } from '../stores/user'
-// const user = useUserStore()
-// const { logout } = user
+import { useUserStore } from '../stores/user'
+import { useMessage } from "naive-ui";
+const user = useUserStore()
+const { logout } = user
 
 
 export default defineComponent({
-    setup() {
+    setup () {
         const message = useMessage();
         const showModalRef = ref(false);
         const showLoadingRef = ref(false);
@@ -63,33 +89,39 @@ export default defineComponent({
             bodyStyle: {
                 // width: "fit-content",
                 width: "500px",
-                backdropFilter: "blur(6px) brightness(150%)",
+                // backdropFilter: "blur(6px) brightness(150%)",
             },
-            cancelCallback() {
+            cancelCallback () {
                 message.success("Cancel", { showIcon: false });
                 showModalRef.value = false
 
             },
-            submitCallback() {
-                // 0.6秒的 loading 提示
-                message.loading("", { duration: 600 });
+            // submitCallback () {
 
-                showLoadingRef.value = true,
+            //     user.confirm(booking)
 
+            //     // // 0.6秒的 loading 提示
+            //     // message.loading("", { duration: 600 });
 
-
-                    // console.log(showModalRef)
-                    // console.log(showModalRef.value)
+            //     // showLoadingRef.value = true,
 
 
-                    /* 抓 showModalRef 的 value 回傳 false，0.7秒後把視窗關掉 */
-                    setTimeout(() => {
-                        message.success("登出成功");
-                        showModalRef.value = false;
-                        showLoadingRef.value = false;
 
-                    }, 800)
-            },
+            //     //     // console.log(showModalRef)
+            //     //     // console.log(showModalRef.value)
+
+
+
+            //     //     /* 抓 showModalRef 的 value 回傳 false，0.7秒後把視窗關掉 */
+            //     //     setTimeout(async () => {
+            //     //         await user.logout()
+
+            //     //         message.success("登出成功");
+            //     //         showModalRef.value = false;
+            //     //         showLoadingRef.value = false;
+
+            //     //     }, 800)
+            // },
 
         };
     },
