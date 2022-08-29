@@ -121,10 +121,10 @@
 
           <div class="footer-menu">
             <p>首頁</p>
-            <p>菜單</p>
+            <p>精緻菜單</p>
             <p>關於我們</p>
             <p>聯絡我們</p>
-            <p>訂位</p>
+            <p>線上訂位</p>
 
           </div>
 
@@ -188,6 +188,11 @@ const { isLogin, isAdmin, cart } = storeToRefs(user)
 
 
 <style scoped>
+.container {
+  margin-bottom: 200px;
+}
+
+
 #logo {
   margin: 3px 0 0 0;
   /* position: absolute; */

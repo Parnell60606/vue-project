@@ -1,4 +1,7 @@
 <template>
-    <n-divider>2542</n-divider>
-    <h1>最純淨的泰山山頂礦泉水</h1>
+    <n-divider title-placement="left">
+        <h1>精緻菜單</h1>
+    </n-divider>
+
+    <n-card></n-card>
 </template>

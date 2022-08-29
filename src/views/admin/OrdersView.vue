@@ -21,16 +21,29 @@
         </thead>
         <tbody>
             <!-- for迴圈 -->
-            <tr v-for='order in orders' :key='order._id'>
-                <td>{{ order._id }}</td>
+            <!-- <tr v-if='orders.length > 0' v-for='order in orders' :key='order._id'> -->
+            <!-- <tr v-if='orders.length > 0' v-for='order in orders'>
+                <td>{{  orders[0]  }}</td>
                 <td>44</td>
                 <td>444</td>
-                <td>...</td>
+                <td>{{  orders  }}</td>
                 <td>4444</td>
                 <td>...</td>
+            </tr> -->
 
+
+            <tr v-if='orders.length > 0' v-for='order in orders[0]'>
+                <td>{{  order.orderStatus  }}</td>
+                <td>{{  (order.user).userName  }}</td>
+                <td>{{  new Date(order.bookingDate * 1000).toDateString()  }}</td>
+                <td>{{  order.bookingDate  }}</td>
+                <td>{{  new Date(order.bookingTime * 1000).toLocaleTimeString()  }}</td>
+                <td>{{  order.usersNote  }}</td>
+                <!-- <td>{{  order._id  }}</td> -->
             </tr>
-
+            <!-- {{orders}}  列出data.result裡面的所有值 (陣列包陣列包物件) -->
+            <!-- new Date  是從秒開始 (資料庫存的是毫秒) -->
+            <!-- (order.user).userName  包起來刪掉就好了，待查 -->
         </tbody>
     </n-table>
 </template>
@@ -38,7 +51,7 @@
 
 
 <script setup>
-// import { api, apiAuth } from '../../plugins/axios'
+import { api, apiAuth } from '../../plugins/axios'
 import Swal from 'sweetalert2'
 
 const orders = reactive([])
@@ -47,15 +60,28 @@ const orders = reactive([])
 
 const order = reactive({
     _id: '',
-    orderStatus: ''
+    orderStatus: '',
+    userName: '',
+    bookingDate: '',
+
+    usersNote: ''
 
 })
 
 
 const init = async () => {
     try {
-        // const { data } = await apiAuth.get('/orders/all')
+        const { data } = await apiAuth.get('/orders/all')
+        orders.push(data.result) // 會多包一個[]
+        // let orders = data.result
+        // orders.push(...data)
 
+
+
+        console.log(orders[0])
+        console.log(data.result[0].user.userName)
+        // document.write(orders)
+        return
         // const x = data.result.length
 
 
@@ -85,6 +111,7 @@ const init = async () => {
     }
 }
 init()
+
 
 </script>
 
