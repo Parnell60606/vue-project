@@ -1,5 +1,5 @@
 <template>
-    <h1>我的帳戶</h1>
+    <h2>我的帳戶</h2>
 
     <!-- 抓自己的個人資料 -->
 
@@ -14,24 +14,25 @@
 
 
 
-        <template #header-extra>
+        <!-- <template #header-extra>
             <div>
                 <n-text v-if="!userInfo.avatar" depth="3">用戶還沒上傳大頭貼</n-text>
                 <n-button v-if="!userInfo.avatar" secondary round>上傳大頭貼</n-button>
             </div>
-        </template>
+        </template> -->
 
-        <n-h4>用戶名：{{ userInfo.userName }}</n-h4>
-        <n-h4>帳號：{{ userInfo.account }}</n-h4>
-        <n-h4>email：{{ userInfo.email }}</n-h4>
-        <n-h4>電話：{{ userInfo.phone }}</n-h4>
+        <n-h4>用戶名：{{  userInfo.userName  }}</n-h4>
+        <n-h4>帳號：{{  userInfo.account  }}</n-h4>
+        <n-h4>email：{{  userInfo.email  }}</n-h4>
+        <n-h4>電話：{{  userInfo.phone  }}</n-h4>
 
 
-        <template #footer>
+        <!-- Pastorder -->
+        <!-- <template #footer>
             <n-text depth="3" v-if="userInfo.pastOrders.length === 0">您尚未建立任何訂單</n-text>
             <div v-if="userInfo.pastOrders.length !== 0">{{ userInfo.pastOrders }}</div>
 
-        </template>
+        </template> -->
 
 
     </n-card>

@@ -1,6 +1,8 @@
 <template>
-    <h1>過去ㄌ</h1>
-    <h2>就</h2>
-    <h3>別做ㄌ</h3>
+    <!-- <n-divider title-placement="left">
+        <h1>取消的訂單</h1>
+    </n-divider> -->
+
+    <h2>取消的訂位</h2>
 
 </template>
