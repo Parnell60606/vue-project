@@ -20,13 +20,13 @@
                                 <n-h2>目前的訂位</n-h2>
                             </RouterLink>
 
-                            <RouterLink to="/pastorders">
+                            <!-- <RouterLink to="/pastorders">
                                 <n-h2>過去的訂位</n-h2>
                             </RouterLink>
 
                             <RouterLink to="/canceledorders">
                                 <n-h2>取消的訂位</n-h2>
-                            </RouterLink>
+                            </RouterLink> -->
 
                             <n-divider style="margin: 50px 0;" />
 
