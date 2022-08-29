@@ -1,11 +1,10 @@
 <template>
 
 
-    <!-- <n-divider title-placement="left">
+    <n-divider title-placement="left">
         <h1>線上訂位</h1>
-    </n-divider> -->
+    </n-divider>
 
-    <h1>線上訂位</h1>
 
 
     <n-space justify="center" :size="50">
@@ -33,17 +32,17 @@
 
             <n-message-provider>
 
-                <!-- <n-popover v-if="!isLogin" trigger="hover" placement="right-end">
+                <n-popover v-if="!isLogin" trigger="hover" placement="right-end">
                     <template #trigger>
 
-                        <n-button @click="wantBooking" strong secondary type="primary" block round>訂位</n-button>
+                        <n-button strong secondary type="primary" block round>訂位</n-button>
                     </template>
 
                     <span>登入會員即可線上訂位</span>
-                </n-popover> -->
+                </n-popover>
 
 
-                <n-button @click="showBooking = true" strong secondary type="primary" block round>訂位</n-button>
+                <n-button v-if="isLogin" @click="showBooking" strong secondary type="primary" block round>訂位</n-button>
 
 
 
@@ -56,7 +55,7 @@
     <!-- 表單 -->
 
     <n-message-provider>
-        <UserOrderform v-model:show="showBooking" />
+        <UserOrderform v-if="showModalRef === 1" />
     </n-message-provider>
 
 
@@ -81,31 +80,34 @@ const { isLogin, isAdmin, cart } = storeToRefs(user)
 
 
 const nowPeople = ref(null)
-const showBooking = ref(false)
+const showModalRef = ref(0);
 
 
+console.log(showModalRef.value)
 
 window.$message = useMessage()
 const message = useMessage();
 
 
-// const wantBooking = () => {
-//     if (!isLogin)
-//         // return Swal.fire({
-//         //     icon: 'success',
-//         //     title: '成功',
-//         //     text: '登入成功'
-//         // })
-//         return message.info(
-//             "I don't know why nobody told you how to unfold your love",
-//             {
-//                 keepAliveOnHover: true
-//             }
-//         );
+const showBooking = () => {
+    if (!isLogin)
+        // return Swal.fire({
+        //     icon: 'success',
+        //     title: '成功',
+        //     text: '登入成功'
+        // })
+        return message.info(
+            "欲線上訂位請先登入",
+            {
+                keepAliveOnHover: true
+            }
+        );
+    if (showModalRef.value === 1) return showModalRef.value = showModalRef.value - 1
 
-//     showBooking = true
+    showModalRef.value = showModalRef.value + 1
+    console.log(showModalRef.value)
 
-// }
+}
 
 
 </script>

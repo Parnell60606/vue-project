@@ -25,19 +25,19 @@ export const useUserStore = defineStore({
         userName: '',
         email: '',
         phone: '',
-        role: 0
+        role: ''
         // cart: 0  // 我的 schema 結構沒有cart的表
     }),
     // 可以先將資料處理好用傳出
     getters: {
         // 判斷是不是會員，有沒有登入
-        isLogin () {
+        isLogin() {
             return this.token.length !== 0
         },
-        isAdmin () {
+        isAdmin() {
             return this.role === 1
         },
-        avatar () {
+        avatar() {
             // 訪客圖像   網址 + this.account    << 此網址會自動產生img
             return 'https://source.boringavatars.com/beam/120/' + this.account
         }
@@ -45,7 +45,7 @@ export const useUserStore = defineStore({
     // 修改狀態用的 function
     // 真正的login function放這邊
     actions: {
-        async login (formValue) {
+        async login(formValue) {
             try {
                 const { data } = await api.post('/users/login', formValue)
                 this.token = data.result.token
@@ -68,7 +68,7 @@ export const useUserStore = defineStore({
                 })
             }
         },
-        async logout () {
+        async logout() {
             try {
                 // await api.delete('/users/logout', {
                 //   headers: {
@@ -92,7 +92,7 @@ export const useUserStore = defineStore({
             this.role = 0
 
         },
-        async getUser () {
+        async getUser() {
             if (this.token.length === 0) return
             try {
                 const { data } = await apiAuth.get('/users/getuser')
@@ -113,7 +113,7 @@ export const useUserStore = defineStore({
 
 
         // async confirm (bookingDefault) {
-        async confirm (booking) {
+        async confirm(booking) {
             try {
                 // 要抓token的就用apiAuth
                 const { data } = await apiAuth.post('/orders', booking)
@@ -121,13 +121,14 @@ export const useUserStore = defineStore({
                 this.bookingTime = data.result.bookingTime
                 this.numberOfPeople = data.result.numberOfPeople
                 this.usersNote = data.result.usersNote
+                this.isFieldBooking = data.result.isFieldBooking
 
                 Swal.fire({
                     icon: 'success',
                     title: '成功',
                     text: '訂位成功'
                 })
-                router.push('/menber')
+                // router.push('/menber')
 
             } catch (error) {
                 Swal.fire({

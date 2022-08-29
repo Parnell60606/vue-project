@@ -8,12 +8,13 @@
       <!-- topbar ----------------------------------------------------------------------------->
       <n-layout-header>
 
-        <n-space justify=" space-between">
+        <n-space justify="space-between">
 
           <n-space :size="48">
 
             <router-link to="/">
-              <img src="../assets/copy_somepeoples_logo_white_onlyfont.svg" width="40" alt="logo">
+              <!-- <img src="../assets/copy_somepeoples_logo_white_onlyfont.svg" width="40" alt="logo"> -->
+              <img src="../assets/logo/LOGO-font-white.svg" width="100" alt="logo" id="logo">
             </router-link>
 
 
@@ -109,7 +110,14 @@
 
         <n-space justify="space-around" :size="72">
 
-          <img src="../assets/copy_somepeoples_logo_white.svg" width="100" alt="logo">
+          <n-space vertical align="center" size="large" class="logo">
+
+            <!-- <img src="../assets/copy_somepeoples_logo_white.svg" width="100" alt="logo"> -->
+            <!-- <img src="../assets/logo/logo-round-white-brown.svg" width="100" alt="logo">
+            <img src="../assets/logo/LOGO-font-black.svg" width="80" alt="logo"> -->
+            <img src="../assets/logo/logo-round-white-full.svg" width="100" alt="logo">
+
+          </n-space>
 
           <div class="footer-menu">
             <p>首頁</p>
@@ -180,9 +188,15 @@ const { isLogin, isAdmin, cart } = storeToRefs(user)
 
 
 <style scoped>
+#logo {
+  margin: 3px 0 0 0;
+  /* position: absolute; */
+  /* top: 10px; */
+}
+
 .n-layout-header {
   background: #363B4B;
-  padding: 16px;
+  padding: 16px 48px;
   color: white;
 
 }

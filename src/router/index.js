@@ -143,6 +143,16 @@ const router = createRouter({
             login: true,
             admin: true
           }
+        },
+        {
+          path: '/fieldbooking',
+          name: 'fieldbooking',
+          component: () => import('../views/admin/FieldBooking.vue'),
+          meta: {
+            title: '現場訂位',
+            login: true,
+            admin: true
+          }
         }
       ]
     },

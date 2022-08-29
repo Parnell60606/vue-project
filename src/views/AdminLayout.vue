@@ -35,7 +35,9 @@
                         <n-h2>- 已取消</n-h2>
                         <n-divider />
 
-                        <n-h2>新增現場訂單</n-h2>
+                        <RouterLink to="/fieldbooking">
+                            <n-h2>新增現場訂單</n-h2>
+                        </RouterLink>
 
                         <RouterLink to="/backgrounddata">
                             <n-h2>觀看數據</n-h2>

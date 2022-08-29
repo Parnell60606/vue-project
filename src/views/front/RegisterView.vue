@@ -148,8 +148,8 @@ const form = ref({
     //   login register 的 formValue合併
     // 註冊登入按鈕事件分開寫
     userName: '',
-    account: 'aaaaaaaa',
-    password: 'aaaaaaaa',
+    account: 'admin',
+    password: 'admin1234',
     email: '',
     phone: ''
 })
@@ -181,7 +181,7 @@ const rules = reactive({
         // message 執行優先度比 validator 高
 
 
-        validator (rule, value,) {
+        validator(rule, value,) {
             if (!value) {
                 return new Error("請輸入帳號")
             } else if (form.value.account.length > 15) {
@@ -198,7 +198,7 @@ const rules = reactive({
     },
     password: {
         required: true,
-        validator (rule, value) {
+        validator(rule, value) {
             if (!value) {
                 return new Error("請輸入密碼")
             } else if (form.value.password.length > 15 || form.value.password.length < 5 || !/^[A-Za-z0-9]+$/.test(value))
@@ -216,7 +216,7 @@ const rules = reactive({
         //     return value.trim()
         // },
 
-        validator (rule, value) {
+        validator(rule, value) {
             if (!value) {
                 console.log(form.value.email)
                 return new Error("請輸入電子信箱")
@@ -234,7 +234,7 @@ const rules = reactive({
         pattern: /^[0-9]+$/,
         message: "請輸入電話號碼",
 
-        validator (rule, value) {
+        validator(rule, value) {
             if (!value) {
                 console.log(form.value.phone)
                 return new Error("請輸入電話號碼")

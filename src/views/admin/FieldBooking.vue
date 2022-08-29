@@ -103,16 +103,14 @@
 
 
 
-
-
 <script setup>
 // style
-import bookingPage from '../assets/front/bookingPage'
+import bookingPage from '../../assets/front/bookingPage'
 
 
-import { api, apiAuth } from '../plugins/axios'
+import { api, apiAuth } from '../../plugins/axios'
 import { useRouter } from 'vue-router'
-import { useUserStore } from '../stores/user'
+import { useUserStore } from '../../stores/user'
 import Swal from 'sweetalert2'
 
 
@@ -136,7 +134,7 @@ const booking = reactive({
     bookingTime: (Math.floor(Date.now() / 1000) % 86400) * 1000,
     numberOfPeople: 1,
     usersNote: '',
-    isFieldBooking: 0
+    isFieldBooking: 1
     // 一天86400秒
     // 要存進資料庫的時候在   /1000 
 

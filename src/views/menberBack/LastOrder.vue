@@ -5,26 +5,35 @@
     <div class="container">
         <div class="my-last-order">
 
-
             <n-card content-style="padding: 50px;" size="large" :segmented="{
                 content: true,
                 footer: 'soft'
             }">
-                <n-h3 v-if="order.orderStatus === 1">
-                    <n-spin stroke="orange" /> 您的訂單正在確認中，請稍後
-                </n-h3>
+                <n-space size="large">
+
+                    <n-icon size="30">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 24 24">
+                            <path d="M18 22l-.01-6L14 12l3.99-4.01L18 2H6v6l4 4l-4 3.99V22h12zM8 7.5V4h8v3.5l-4 4l-4-4z"
+                                fill="Peru"></path>
+                        </svg>
+                    </n-icon>
+                    <n-h3 v-if="order.orderStatus === 1">
+                        您的訂單正在確認中，請稍後
+                    </n-h3>
+                </n-space>
 
                 <n-divider />
+
+                <template #header-extra>
+                    #header-extra
+                </template>
 
                 <n-h4>訂單id：{{ order._id }}</n-h4>
                 <n-h4>訂單狀態：{{ order.orderStatus }}</n-h4>
 
 
 
-                <template #header-extra>
-                    #header-extra
-                </template>
-                卡片内容
                 <template #footer>
                     #footer
                 </template>
