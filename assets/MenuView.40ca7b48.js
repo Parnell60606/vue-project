@@ -1,1 +1,0 @@
-import{_,o,c,a as e,w as a,F as s,f as r,d as l,g as d}from"./index.dcfaa2aa.js";const i={},p=l("h1",null,"\u7CBE\u7DFB\u83DC\u55AE",-1);function u(m,f){const n=r,t=d;return o(),c(s,null,[e(n,{"title-placement":"left"},{default:a(()=>[p]),_:1}),e(t)],64)}const h=_(i,[["render",u]]);export{h as default};
