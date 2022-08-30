@@ -29,8 +29,8 @@
                     #header-extra
                 </template>
 
-                <n-h4>訂單id：{{ order._id }}</n-h4>
-                <n-h4>訂單狀態：{{ order.orderStatus }}</n-h4>
+                <n-h4>訂單id：{{  order._id  }}</n-h4>
+                <n-h4>訂單狀態：{{  order.orderStatus  }}</n-h4>
 
 
 
@@ -73,7 +73,7 @@ const order = reactive({
 const getOrderTest = async () => {
     try {
         // 用id抓訂單
-        const { data } = await api.get('/orders/getbyid/6305dfe4d962f7aa83980687/')
+        const { data } = await api.get('/orders/getbyid/630d60b41af9df6ae273e5f5/')
         order._id = data.result._id
         order.orderStatus = data.result.orderStatus
     } catch (error) {
