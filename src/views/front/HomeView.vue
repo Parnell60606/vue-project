@@ -130,6 +130,7 @@ body {
     font-weight: 400;
 }
 
+/* 
 @media (max-width:1400px) {
     #homeview-logo {
         position: absolute;
@@ -148,5 +149,5 @@ body {
         right: 20%;
         width: 250px;
     }
-}
+} */
 </style>

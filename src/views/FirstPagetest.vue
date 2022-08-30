@@ -18,7 +18,7 @@
             <div class="center-icon">
                 <!-- <img src="../assets/copy_somepeoples_logo_white.svg" alt="copylogo" id="logo"> -->
                 <img src="../assets/logo/logo-round-white.svg" alt="roundLogo" id="logo2">
-                <div id="thirty-min-text">30 MINUTES COFFEE<br> 讓您享受悠閒愜意的午茶時光 </div>
+                <div id="thirty-min-text">30 MINUTES COFFEE </div>
                 <div id="enter-button">
                     START
                 </div>
