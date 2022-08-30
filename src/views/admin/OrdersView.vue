@@ -35,8 +35,8 @@
                 <td>{{  order.orderStatus  }}</td>
                 <td>{{  order.user?.userName  }}</td>
                 <td>{{  new Date(order.bookingDate * 1000).toDateString()  }}</td>
-                <td>{{  order.bookingDate  }}</td>
                 <td>{{  new Date(order.bookingTime * 1000).toLocaleTimeString()  }}</td>
+                <td>{{  order.numberOfPeople  }}</td>
                 <td>{{  order.usersNote  }}</td>
                 <!-- <td>{{  order._id  }}</td> -->
             </tr>
@@ -61,7 +61,7 @@ const orders = reactive([])
 const order = reactive({
     _id: '',
     orderStatus: '',
-    userName: '',
+    userName: '(未填寫)',
     bookingDate: '',
     usersNote: ''
 
