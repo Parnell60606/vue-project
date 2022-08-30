@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     copy: typeof import('./src/components/LogoutModal copy.vue')['default']
     DataTabletest: typeof import('./src/components/DataTabletest.vue')['default']
     DialogComponent: typeof import('./src/components/DialogComponent.vue')['default']
+    FacebookIcon: typeof import('./src/components/icons/FacebookIcon.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
@@ -70,6 +71,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     StatisticTest: typeof import('./src/components/StatisticTest.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    TwitterIcon: typeof import('./src/components/icons/TwitterIcon.vue')['default']
     UserOrderform: typeof import('./src/components/UserOrderform.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }

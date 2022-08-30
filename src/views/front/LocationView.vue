@@ -66,7 +66,6 @@
     </div>
 
 
-    <div id="test">▲</div>
 </template>
 
 <style scoped>
@@ -74,13 +73,5 @@
     width: 100%;
     height: 500px;
     border: 0;
-}
-
-#test {
-    position: absolute;
-    left: 50%;
-    /* right: 0; */
-    transform: translate(-50%, 10%);
-    margin: auto;
 }
 </style>

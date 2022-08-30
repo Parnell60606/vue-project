@@ -20,33 +20,33 @@
 
                     <nav>
 
-                        <RouterLink to="/todaysorder">
+                        <!-- <RouterLink to="/todaysorder">
                             <n-h2>今天的訂單</n-h2>
-                        </RouterLink>
+                        </RouterLink> -->
 
-                        <n-divider />
+                        <!-- <n-divider /> -->
 
                         <RouterLink to="/ordersview">
                             <n-h2>全部的訂單</n-h2>
                         </RouterLink>
-
+                        <!-- 
                         <n-h2>- 尚未確認</n-h2>
                         <n-h2>- 已確認</n-h2>
-                        <n-h2>- 已取消</n-h2>
+                        <n-h2>- 已取消</n-h2> -->
                         <n-divider />
 
                         <RouterLink to="/fieldbooking">
                             <n-h2>新增現場訂單</n-h2>
                         </RouterLink>
 
-                        <RouterLink to="/backgrounddata">
+                        <!-- <RouterLink to="/backgrounddata">
                             <n-h2>觀看數據</n-h2>
-                        </RouterLink>
+                        </RouterLink> -->
 
                         <br>
 
                         <RouterLink to="/">
-                            <n-h2>+ 回前台 </n-h2>
+                            <n-h2> 回前台 </n-h2>
                         </RouterLink>
                     </nav>
                 </n-layout-sider>
@@ -68,14 +68,6 @@
                         <router-view />
                     </n-message-provider>
 
-
-                    <div class="space" style="height: 500px;"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-4 red">5555</div>
-                        </div>
-                    </div>
 
 
                 </n-layout>

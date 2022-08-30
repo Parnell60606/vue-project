@@ -12,8 +12,10 @@
         <n-space vertical>
 
             <div class="booking-display my-5">
-                今天的訂位人數： <br>
-                目前場內人數：{{ nowPeople }}
+                今天的訂位人數：7 <br>
+                <!-- 目前場內人數：{{ nowPeople }} -->
+                目前場內人數：5
+
             </div>
 
         </n-space>

@@ -34,7 +34,7 @@
 
             <tr v-if='orders.length > 0' v-for='order in orders[0]'>
                 <td>{{  order.orderStatus  }}</td>
-                <td>{{  (order.user).userName  }}</td>
+                <td>{{  order.user?.userName  }}</td>
                 <td>{{  new Date(order.bookingDate * 1000).toDateString()  }}</td>
                 <td>{{  order.bookingDate  }}</td>
                 <td>{{  new Date(order.bookingTime * 1000).toLocaleTimeString()  }}</td>
@@ -53,6 +53,7 @@
 <script setup>
 import { api, apiAuth } from '../../plugins/axios'
 import Swal from 'sweetalert2'
+import { objectKeys } from '@antfu/utils';
 
 const orders = reactive([])
 
@@ -63,7 +64,6 @@ const order = reactive({
     orderStatus: '',
     userName: '',
     bookingDate: '',
-
     usersNote: ''
 
 })
@@ -79,7 +79,7 @@ const init = async () => {
 
 
         console.log(orders[0])
-        console.log(data.result[0].user.userName)
+        console.log(data.result[1].user.userName)
         // document.write(orders)
         return
         // const x = data.result.length
