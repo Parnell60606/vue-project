@@ -15,7 +15,8 @@
     <!-- <h1>首頁 </h1> -->
     <div id="homeview-text">
 
-        <n-h2 id="homeview-text-top">三十分鐘咖啡<br>利用三十分鐘的路程<br>給您最獨特的午茶體驗</n-h2>
+        <n-h2 id="homeview-text-top">三十分鐘咖啡 Thirty Minute Coffee</n-h2>
+        <n-h2 id="homeview-text-center">利用三十分鐘的路程<br>給您最獨特的午茶體驗</n-h2>
         <n-divider />
         <n-h2 id="homeview-text-bottom"> ◆ 如不想走路上山可考慮我們的專車接駁方案</n-h2>
     </div>
@@ -34,6 +35,7 @@ body {
 <style scoped>
 .container-relative {
     height: 100vh;
+    margin-bottom: -260px;
 }
 
 #first-page-video {
@@ -71,10 +73,10 @@ body {
 
 #homeview-logo {
     position: absolute;
-    top: 20%;
-    right: 22%;
+    top: 26%;
+    right: 27%;
 
-    width: 300px;
+    width: 200px;
 
     opacity: .6;
     z-index: 20;
@@ -92,8 +94,8 @@ body {
 #homeview-text {
     position: absolute;
     top: 30%;
-    right: 45%;
-    width: 400px;
+    right: 42%;
+    width: 550px;
     opacity: 0.8;
 }
 
@@ -107,7 +109,17 @@ body {
     color: white;
     text-align: right;
     font-weight: 600;
+    margin: 0 auto;
 
+
+}
+
+#homeview-text-center {
+    padding: 0 24px;
+    color: white;
+    text-align: right;
+    font-size: 18px;
+    margin: 0 auto;
 }
 
 #homeview-text-bottom {
