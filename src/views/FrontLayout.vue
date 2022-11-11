@@ -24,11 +24,11 @@
                   關於我們
                 </router-link>
               </n-tab>
-              <n-tab name="菜單">
+              <!-- <n-tab name="菜單">
                 <router-link to="/menu">
                   精緻菜單
                 </router-link>
-              </n-tab>
+              </n-tab> -->
               <n-tab name="訂位">
                 <router-link to="/booking">
                   線上訂位

@@ -7,9 +7,15 @@
             autoplay="true" loop="true" /> -->
 
 
-        <video muted id="video2"
+            <!-- 來源404 -->
+        <!-- <video muted id="video2"
             src="https://cdn.videvo.net/videvo_files/video/free/2020-03/large_watermarked/200223_Cafe_03_40_preview.mp4"
+            autoplay="true" loop="true" /> -->
+            <video muted id="video2"
+            src="../../assets/video/200223_Cafe_03_40.mp4"
             autoplay="true" loop="true" />
+
+            
     </div>
     <img src="../../assets/logo/logo-round-white-full.svg" alt="logo" id="homeview-logo">
     <!-- <h1>首頁 </h1> -->
