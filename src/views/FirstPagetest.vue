@@ -9,9 +9,19 @@
             src="https://cdn.videvo.net/videvo_files/video/free/2020-03/large_watermarked/200223_Cafe_03_41_preview.mp4"
             autoplay="true" loop="true" /> -->
 
+            <!-- 內置影片 -->
+            <!-- <video muted id="first-page-video" src="../assets/video/pexels-kelly-lacy-6769802.mp4" autoplay="true"
+                loop="true" /> -->
 
-            <video muted id="first-page-video" src="../assets/video/pexels-kelly-lacy-6769802.mp4" autoplay="true"
-                loop="true" />
+            <!-- yt影片 -->
+            <!-- rel=0 不秀出推薦影片， -->
+            <iframe width="100%" height="130%"
+                src="https://www.youtube.com/embed/ZPih4ZbWi18?rel=0&autoplay=1&mute=1&controls=0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen id="first-page-video"></iframe>
+
+
 
 
 
@@ -72,6 +82,10 @@ body {
     margin: 0 auto; */
     overflow: hidden;
     /* transform: translate(-20px, -10px); */
+}
+
+#first-page-video-yt {
+    top: -15px;
 }
 
 .center-icon {

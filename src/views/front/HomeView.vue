@@ -7,15 +7,17 @@
             autoplay="true" loop="true" /> -->
 
 
-            <!-- 來源404 -->
-        <!-- <video muted id="video2"
-            src="https://cdn.videvo.net/videvo_files/video/free/2020-03/large_watermarked/200223_Cafe_03_40_preview.mp4"
-            autoplay="true" loop="true" /> -->
-            <video muted id="video2"
-            src="../../assets/video/200223_Cafe_03_40.mp4"
-            autoplay="true" loop="true" />
+        <!-- 內置影片 -->
+        <video muted id="video2" src="../../assets/video/200223_Cafe_03_40.mp4" autoplay="true" loop="true" />
 
-            
+        <!-- yt影片 -->
+        <!-- <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/SgA1D0oGbXk?rel=0&autoplay=1&mute=1&controls=0"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> -->
+
+
     </div>
     <img src="../../assets/logo/logo-round-white-full.svg" alt="logo" id="homeview-logo">
     <!-- <h1>首頁 </h1> -->
@@ -53,6 +55,7 @@ body {
     filter: contrast(40%) brightness(120%);
     overflow: hidden;
     /* transform: translate(-20px, -10px); */
+
 }
 
 
@@ -64,6 +67,9 @@ body {
     filter: contrast(90%) brightness(60%);
     overflow: hidden;
     /* transform: translate(-20px, -10px); */
+
+    background-color: #21242b;
+
 }
 
 
