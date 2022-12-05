@@ -5,9 +5,6 @@
         <router-link to="/home">
             <!-- <img src="https://picsum.photos/1980/960/?random=10"> -->
 
-            <!-- <video
-            src="https://cdn.videvo.net/videvo_files/video/free/2020-03/large_watermarked/200223_Cafe_03_41_preview.mp4"
-            autoplay="true" loop="true" /> -->
 
             <!-- 內置影片 -->
             <!-- <video muted id="first-page-video" src="../assets/video/pexels-kelly-lacy-6769802.mp4" autoplay="true"
