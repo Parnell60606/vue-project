@@ -6,14 +6,33 @@
         <n-divider vertical />
         <div>註冊</div>
     </n-button>
-    <n-modal v-model:show="showModal" :style="bodyStyle" :mask-closable="false" preset="card" content="確認視窗"
+    <!-- <n-modal v-model:show="showModal" :style="bodyStyle" :mask-closable="false" preset="card" content="確認視窗"
         class="loginlogout-modal" :header-style="headerStyle">
 49928
         <n-message-provider>
             <register-view />
         </n-message-provider>
 
-    </n-modal>
+    </n-modal> -->
+
+<n-modal v-model:show="showModal">
+    <n-card
+      style="width: 600px"
+      title="模态框"
+      :bordered="false"
+      size="huge"
+      role="dialog"
+      aria-modal="true"
+    >
+      <template #header-extra>
+        噢！
+      </template>
+      内容
+      <template #footer>
+        尾部
+      </template>
+    </n-card>
+  </n-modal>
 </template>
 
 <script>
