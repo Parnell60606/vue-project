@@ -22,7 +22,7 @@
 
                         <!-- <n-form-item-row label="密碼" :rules="rules.password" path="password"> -->
                         <n-form-item-row label="密碼" path="password">
-                            <n-input v-model:value="form.password" placeholder="請輸入密碼" />
+                            <n-input v-model:value="form.password" type="password" show-password-on="click" placeholder="請輸入密碼" />
                         </n-form-item-row>
 
                         <n-button attr-type="submit" :loading="loading" type="primary" block secondary strong round>
