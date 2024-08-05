@@ -1,6 +1,5 @@
 <template>
-
-    testtest111
+    
     <!-- 登入頁面的 n-modal (彈出視窗) -->
     <n-button @click="showModal = true" round>
         <div>登入</div>
@@ -9,7 +8,7 @@
     </n-button>
     <n-modal v-model:show="showModal" :style="bodyStyle" :mask-closable="false" preset="card" content="確認視窗"
         class="loginlogout-modal" :header-style="headerStyle">
-
+49928
         <n-message-provider>
             <register-view />
         </n-message-provider>
