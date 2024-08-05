@@ -1,1 +1,0 @@
-import{_ as t,o as c,c as n,F as o,d as e}from"./index.fd96157b.js";const a={},s=e("h1",null,"\u5F8C\u53F0\u6578\u64DA",-1),r=e("h2",null,"\u9673\u5217\u8CC7\u6599\u8DDF\u5716\u8868()",-1);function _(l,d){return c(),n(o,null,[s,r],64)}const f=t(a,[["render",_]]);export{f as default};
